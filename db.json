@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "urls": {
+      "fullblock": ["/fullblock"],
+      "partrly": {
+        "/partly": {
+
+        }
+      }
+    }
+  },
+  "page": {
+    "Layout": {
+      "Header": {
+        "text": "Header"
+      },
+      "Layout_2": {
+        "Sider": {
+          "text": "left sidebar"
+        },
+        "Content": {
+          "text": "main content"
+        },
+        "Sider_2": {
+          "text": "right sidebar"
+        }
+      },
+      "Footer": {
+        "text": "Footer"
+      }
+    }
+  }
+}
