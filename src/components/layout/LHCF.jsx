@@ -1,16 +1,14 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Layout, Header, Footer, Content } from '../connectVisualLibrary';
 import PropTypes from 'prop-types';
 
-const { Header, Footer, Content } = Layout;
-
-const LHCF = ({ header, footer, content }) => (
-  <Layout>
+const LHCF = ({ header, footer, content, ...rest }) => { console.log(rest); return(
+  <Layout {...rest} >
     <Header>{ header }</Header>
     <Content>{ content }</Content>
     <Footer>{ footer }</Footer>
   </Layout>
-);
+)};
 
 LHCF.propTypes = {
   header: PropTypes.oneOfType([

@@ -1,28 +1,31 @@
 import * as Antd from 'antd';
 import { keys, difference, omit } from 'lodash';
 
-const compKeys = ['Layout', 'Sider', 'Footer', 'Content', 'Header'];
-
-const omitByKey = (obj, comKey) => {
-  return keys(obj).reduce((acc, item) => {
-    if(!comKey.includes(item.split('_')[0])){
-      return {...acc, [item]: obj[item]}
+const clearWidget = (data) => {
+  return keys(data).reduce((acc, item) => {
+    if(!data[item].widget){
+      return {...acc, [item]: data[item]}
     }
-    return {};
+    return acc;
   }, {})
 };
 
-export const schemaAndComponents = () => {
-  const schema = [];
+const schemaAndComponents1 = () => {
+  const schema = {};
   const rdom = {};
   return function recursive(data){
-    for(let item in data) {
-      if (compKeys.includes(item.split('_')[0])) {
-        rdom[item] = omitByKey(data[item], compKeys);
-        schema.push(item);
-        recursive(data[item]);
-      }
+
+    if (data.widget && data.id) {
+      rdom[`${data.widget}#${data.id}`] = clearWidget(data);
     }
-      return { rdom, schema }
+
+    for(let key in data) {
+        if(data[key].widget && data[key].id)
+        recursive(data[key]);
+    }
+
+    return { rdom, schema: data }
   }
 };
+
+export const schemaAndComponents = schemaAndComponents1();

@@ -1,8 +1,6 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Layout, Header, Footer, Content, Sider } from '../connectVisualLibrary';
 import PropTypes from 'prop-types';
-
-const { Header, Footer, Content } = Layout;
 
 const LHSLCF = ({ header, footer, sider, content }) => (
   <Layout>

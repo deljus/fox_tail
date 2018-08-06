@@ -5,11 +5,9 @@ import CONST from './constants';
 import * as actions from './actions';
 
 export function* init({ pathname }) {
-  const permissions = yield call(axiosR, { url: urls.permissions });
-  yield put(actions.setPermissions(permissions.data));
   const page = yield call(axiosR, { url: pathname });
-  yield put(actions.setPage(pathname, page.data));
-  console.log(schemaAndComponents()(page.data));
+  yield put(actions.setPage(pathname, schemaAndComponents(page.data)));
+  console.log(schemaAndComponents(page.data));
 }
 
 export function* sagas() {
