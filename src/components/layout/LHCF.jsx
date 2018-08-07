@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Header, Footer, Content } from '../connectVisualLibrary';
+import { Layout, Header, Footer, Content } from '../connect';
 import PropTypes from 'prop-types';
 
 const LHCF = ({ header, footer, content, ...rest }) => { console.log(rest); return(

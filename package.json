@@ -13,7 +13,7 @@
     "recompose": "^0.28.0",
     "redux-saga": "^0.16.0",
     "redux-actions": "^2.6.1",
-    "antd":" ^3.7.3",
+    "antd": " ^3.7.3",
     "axios": "^0.18.0",
     "moment": "^2.22.2",
     "redux-devtools-extension": "^2.13.5",
@@ -24,6 +24,15 @@
     "build": "react-scripts build",
     "server": "json-server --watch db.json --port 3001",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9001 -c src/.storybook"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^4.0.0-alpha.3",
+    "@storybook/addon-knobs": "4.0.0-alpha.4",
+    "@storybook/addon-links": "^4.0.0-alpha.4",
+    "@storybook/react": "^4.0.0-alpha.3",
+    "@storybook/addon-options": "^4.0.0-alpha.12",
+    "babel-core": "^6.26.3"
   }
 }

@@ -6,23 +6,20 @@
     "header": {
       "id": "menu",
       "widget": "Menu",
-      "items": [{
-        "text": "Index page",
-        "link": "/",
-        "key": "index"
-      },{
-        "text": "Second page",
-        "link": "/second",
-        "key": "second"
-      },{
-        "text": "Next page",
-        "link": "/next",
-        "key": "next"
-      },{
-        "text": "Other page",
-        "link": "/other",
-        "key": "other"
-      }]
+      "items": {
+        "Index": "",
+        "Second": "second",
+        "Dropdown": ["dropdown", {
+          "One": "one",
+          "Two": "two",
+          "Three": "three",
+          "Sub": ["sub", {
+            "sub1": "1",
+            "sub2": "2",
+            "sub3": "3"
+          }]
+        }]
+      }
     },
     "content": "Hello world",
     "footer": "FOOTER"
