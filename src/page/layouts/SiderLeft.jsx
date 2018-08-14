@@ -1,19 +1,24 @@
 import React from 'react';
-import { Layout, Header, Footer, Content, Sider } from '../connect';
+import { Layout } from 'antd';
+import Menu from '../containers/Menu';
 import PropTypes from 'prop-types';
 
-const LHSRCF = ({ header, footer, sider, content }) => (
+const { Header, Footer, Content, Sider } = Layout;
+
+const SiderLeft = ({ header, footer, urls, content }) => (
   <Layout>
     <Header>{ header }</Header>
     <Layout>
+      <Sider>
+        <Menu urls={ urls } />
+      </Sider>
       <Content>{ content }</Content>
-      <Sider>{ sider }</Sider>
     </Layout>
     <Footer>{ footer }</Footer>
   </Layout>
 );
 
-LHSRCF.propTypes = {
+SiderLeft.propTypes = {
   header: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node
@@ -32,4 +37,4 @@ LHSRCF.propTypes = {
   ]),
 };
 
-export default LHSRCF;
+export default SiderLeft;

@@ -1,8 +1,7 @@
 import CONST from './constants';
 
-export const initialize = ({ pathname }) => ({
+export const initialize = () => ({
   type: CONST.INITIALIZE,
-  pathname
 });
 
 export const setPermissions = (permission) => ({

@@ -1,27 +1,16 @@
 {
   "page": {
-    "id": "layout",
-    "style": {"height": "500px"},
-    "widget": "LHCF",
-    "header": {
-      "id": "menu",
-      "widget": "Menu",
-      "items": {
-        "Index": "",
-        "Second": "second",
-        "Dropdown": ["dropdown", {
-          "One": "one",
-          "Two": "two",
-          "Three": "three",
-          "Sub": ["sub", {
-            "sub1": "1",
-            "sub2": "2",
-            "sub3": "3"
-          }]
-        }]
-      }
-    },
-    "content": "Hello world",
-    "footer": "FOOTER"
+    "layout": "StandartLayout",
+    "header": "You header",
+    "urls": [
+      { "id": "1", "url": "/", "name": "ITEM1", "icon": "", "parent": "" },
+      { "id": "2", "url": "/item", "name": "ITEM2", "icon": "", "parent": "" },
+      { "id": "3", "url": "/item2", "name": "ITEM3", "icon": "", "parent": "" },
+      { "id": "4", "url": "/item3", "name": "ITEM4", "icon": "", "parent": "" },
+      { "id": "5", "url": "/item4", "name": "ITEM5", "icon": "", "parent": "" },
+      { "id": "6", "url": "/item5", "name": "ITEM6", "icon": "", "parent": "" }
+    ],
+    "footer": "You footer",
+    "breadcrumb": true
   }
 }

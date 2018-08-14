@@ -1,11 +1,10 @@
 {
-  "name": "NO2",
+  "name": "fox-tail",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
@@ -17,22 +16,41 @@
     "axios": "^0.18.0",
     "moment": "^2.22.2",
     "redux-devtools-extension": "^2.13.5",
-    "json-server": "^0.14.0"
+    "json-server": "^0.14.0",
+    "babel-preset-env": "^1.7.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack --mode production",
     "server": "json-server --watch db.json --port 3001",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9001 -c src/.storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^4.0.0-alpha.3",
     "@storybook/addon-knobs": "4.0.0-alpha.4",
     "@storybook/addon-links": "^4.0.0-alpha.4",
-    "@storybook/react": "^4.0.0-alpha.3",
     "@storybook/addon-options": "^4.0.0-alpha.12",
-    "babel-core": "^6.26.3"
+    "@storybook/react": "^4.0.0-alpha.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.11.6",
+    "css-loader": "^1.0.0",
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-import": "^2.5.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "react-app-env": "^1.2.0",
+    "react-hot-loader": "^4.3.3",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   }
 }

@@ -1,5 +1,5 @@
 import { Link, withRouter } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem } from '../connect';
+import { Breadcrumb, BreadcrumbItem } from 'antd';
 
 const breadcrumbNameMap = {
   '/apps': 'Application List',

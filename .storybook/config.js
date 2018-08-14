@@ -1,7 +1,7 @@
 import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
-const req = require.context('../', true, /\.story\.js$/)
+const req = require.context('../stories', true, /\.story\.js$/)
 
 setOptions({
   name: 'fox-tail',

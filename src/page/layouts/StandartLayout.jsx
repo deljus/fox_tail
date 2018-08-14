@@ -1,16 +1,21 @@
 import React from 'react';
-import { Layout, Header, Footer, Content } from '../connect';
+import { Layout } from 'antd';
 import PropTypes from 'prop-types';
+import Menu from '../containers/Menu';
 
-const LHCF = ({ header, footer, content, ...rest }) => { console.log(rest); return(
+const { Header, Footer, Content } = Layout;
+
+const StandartLayout = ({ urls, footer, content, ...rest }) => { console.log(rest); return(
   <Layout {...rest} >
-    <Header>{ header }</Header>
+    <Header>
+      <Menu urls={ urls } />
+    </Header>
     <Content>{ content }</Content>
     <Footer>{ footer }</Footer>
   </Layout>
 )};
 
-LHCF.propTypes = {
+StandartLayout.propTypes = {
   header: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.node
@@ -25,4 +30,4 @@ LHCF.propTypes = {
   ]),
 };
 
-export default LHCF;
+export default StandartLayout;

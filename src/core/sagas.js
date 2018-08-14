@@ -5,9 +5,8 @@ import CONST from './constants';
 import * as actions from './actions';
 
 export function* init({ pathname }) {
-  const page = yield call(axiosR, { url: pathname });
-  yield put(actions.setPage(pathname, schemaAndComponents(page.data)));
-  console.log(schemaAndComponents(page.data));
+  const page = yield call(axiosR, { url: urls.page });
+  yield put(actions.setPage(page.data));
 }
 
 export function* sagas() {
