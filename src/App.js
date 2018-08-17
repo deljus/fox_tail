@@ -7,7 +7,7 @@ import Page from './page';
 import store from './core/store';
 import ru_RU from 'antd/lib/locale-provider/ru_RU';
 
-const App = () => (
+export default () => (
   <Provider store={store}>
     <BrowserRouter>
       <LocaleProvider locale={ru_RU}>

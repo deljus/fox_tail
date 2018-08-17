@@ -1,9 +1,9 @@
 import BreadCrumb from './Breadcrumb';
 import Menu from './Menu';
-import Widgets from './Widgets';
+import WidgetsFactory from './WidgetsFactory';
 
 export {
   BreadCrumb,
   Menu,
-  Widgets,
+  WidgetsFactory,
 };

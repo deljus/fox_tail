@@ -13,8 +13,8 @@ const FullSiderLeft = ({ header, footer, urls, ...rest }) => (
     <Layout>
       <Header>{ header }</Header>
       <Content>
-        <BreadCrumb urls={ urls } />
-        <Widgets/>
+        {/*<BreadCrumb urls={ urls } />*/}
+        {/*<Widgets/>*/}
       </Content>
       <Footer>{ footer }</Footer>
     </Layout>
