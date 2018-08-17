@@ -11,6 +11,17 @@ const page = (state = {}, action) => {
   }
 };
 
+const widgets = (state = {}, action) => {
+  switch (action.type) {
+    case CONST.SET_WIDGETS:
+      return { ...action.widgets };
+
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   page,
+  widgets,
 });
