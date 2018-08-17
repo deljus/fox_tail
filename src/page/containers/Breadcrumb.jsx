@@ -1,5 +1,6 @@
+import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Breadcrumb, BreadcrumbItem } from 'antd';
+import { Breadcrumb } from 'antd';
 
 const breadcrumbNameMap = {
   '/apps': 'Application List',
@@ -14,11 +15,11 @@ const Home = withRouter((props) => {
   const extraBreadcrumbItems = pathSnippets.map((_, index) => {
     const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
     return (
-      <BreadcrumbItem key={url}>
+      <Breadcrumb.Item key={url}>
         <Link to={url}>
           {breadcrumbNameMap[url]}
         </Link>
-      </BreadcrumbItem>
+      </Breadcrumb.Item>
     );
   });
   const breadcrumbItems = [(
