@@ -19,7 +19,12 @@ export const setPage = (page) => ({
   page
 });
 
+export const setGrid = (grid) => ({
+  type: CONST.SET_GRID,
+  grid
+});
+
 export const setWidgets = (widgets) => ({
   type: CONST.SET_WIDGETS,
-  widgets
+  widgets,
 });

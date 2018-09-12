@@ -12,9 +12,10 @@ function* init() {
 
 function* getWidgets({ pathname }) {
   const response = yield call(axiosR, { url: pathname });
-  const { widgets } = response.data;
-  const widgetPath = reduce(widgets, (prev, { name, type }) => ({ ...prev, [name]: type }),{});
+  const { widgets, grid } = response.data;
+  const widgetPath = reduce(widgets, (prev, next) => ({ ...prev, [next.name]: { ...next }} ),{});
   yield put(actions.setWidgets(widgetPath));
+  yield put(actions.setGrid(grid));
 }
 
 
