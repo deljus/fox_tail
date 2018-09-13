@@ -23,6 +23,8 @@ const widgets = (state = {}, action) => {
   switch (action.type) {
     case CONST.SET_WIDGETS:
       return { ...action.widgets, ...action.any };
+    case CONST.SET_WIDGET_PROPS:
+      return { ...state, [action.name]: Object.assign(state[action.name], action.props) };
     default:
       return state;
   }

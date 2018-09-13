@@ -9,11 +9,6 @@ export const initializeWidgets = (pathname) => ({
   pathname
 });
 
-export const setPermissions = (permission) => ({
-  type: CONST.SET_PERMISSION,
-  permission
-});
-
 export const setPage = (page) => ({
   type: CONST.SET_PAGE,
   page
@@ -27,4 +22,10 @@ export const setGrid = (grid) => ({
 export const setWidgets = (widgets) => ({
   type: CONST.SET_WIDGETS,
   widgets,
+});
+
+export const setWidgetProps = (name, props) => ({
+  type: CONST.SET_WIDGET_PROPS,
+  name,
+  props,
 });

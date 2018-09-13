@@ -1,9 +1,9 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
 import { urls, axiosR } from './config';
 import { reduce } from 'lodash';
-import { schemaAndComponents } from './until';
 import CONST from './constants';
 import * as actions from './actions';
+import { notification } from 'antd';
 
 function* init() {
   const page = yield call(axiosR, { url: urls.page });
@@ -18,8 +18,18 @@ function* getWidgets({ pathname }) {
   yield put(actions.setGrid(grid));
 }
 
+function* catchErrSaga(fn, action) {
+  try {
+    yield call(fn, action);
+  } catch (e) {
+    yield call(notification.error({
+      message: 'Error',
+      description: e.message,
+    }));
+  }
+}
 
 export function* sagas() {
-  yield takeLatest(CONST.INITIALIZE, init);
-  yield takeLatest(CONST.GET_WIDGETS, getWidgets);
+  yield takeLatest(CONST.INITIALIZE, catchErrSaga, init);
+  yield takeLatest(CONST.GET_WIDGETS, catchErrSaga, getWidgets);
 }

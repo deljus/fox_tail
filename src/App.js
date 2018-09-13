@@ -12,6 +12,7 @@ import Widgets from './widgets';
 import store from './core/store';
 import ru_RU from 'antd/lib/locale-provider/ru_RU';
 
+
 const Routes = ({ urls }) =>
   map(urls, item =>
     <Route
@@ -25,18 +26,20 @@ const Routes = ({ urls }) =>
 const NotFound = () => 'Not Found';
 
 const AppLayout = ({ layout, urls }) => (
-  <Layouts
-    type={layout}
-    urls={urls}>
+  <BrowserRouter>
     <Switch>
+      <Layouts
+      type={layout}
+      urls={urls}>
       <Routes
         urls={urls}
       />
       <Route
         path="*"
         component={NotFound} />
+      </Layouts>
     </Switch>
-  </Layouts>
+  </BrowserRouter>
 );
 
 const mapDispatchToProps = {
@@ -54,11 +57,9 @@ const Application = connect(
 
 export default () => (
   <Provider store={store}>
-    <BrowserRouter>
-      <LocaleProvider locale={ru_RU}>
-        <Application/>
-      </LocaleProvider>
-    </BrowserRouter>
+    <LocaleProvider locale={ru_RU}>
+      <Application/>
+    </LocaleProvider>
   </Provider>
 )
 
