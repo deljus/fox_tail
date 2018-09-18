@@ -19,7 +19,10 @@
     "redux-actions": "^2.6.1",
     "redux-devtools-extension": "^2.13.5",
     "redux-saga": "^0.16.0",
-    "history": "^4.7.2"
+    "history": "^4.7.2",
+    "reselect": "^4.0.0-beta.1",
+    "class-autobind-decorator": "^3.0.1",
+    "query-string": "^6.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -12,10 +12,11 @@ function* init() {
 
 function* getWidgets({ pathname }) {
   const response = yield call(axiosR, { url: pathname });
-  const { widgets, grid } = response.data;
+  const { widgets, grid, dependencies } = response.data;
   const widgetPath = reduce(widgets, (prev, next) => ({ ...prev, [next.name]: { ...next }} ),{});
   yield put(actions.setWidgets(widgetPath));
   yield put(actions.setGrid(grid));
+  yield put(actions.setDependencies(dependencies));
 }
 
 function* catchErrSaga(fn, action) {

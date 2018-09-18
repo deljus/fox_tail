@@ -29,3 +29,18 @@ export const setWidgetProps = (name, props) => ({
   name,
   props,
 });
+
+export const resetWidget = () => ({
+  type: CONST.CLEAR_WIDGETS,
+});
+
+export const setDependencies = (dependencies) => ({
+  type: CONST.SET_DEPENDENCIES,
+  dependencies,
+});
+
+export const widgetsChange = (path, value) => ({
+  type: CONST.WIDGETS_CHANGE,
+  path,
+  value,
+});

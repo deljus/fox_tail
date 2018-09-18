@@ -1,44 +1,14 @@
-import React, { Component, createElement } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
-import { initializeWidgets } from '../core/actions';
-import { map, isEmpty, keys, get, uniqueId } from 'lodash';
-import TableStandart from './TableStandart';
+import React from 'react';
 import Card from './Card';
-import { didMountInitWidgets } from '../hocs';
+import TableStandart from './TableStandart';
+import {widgetPropsHOC, dataProvide, clickSelect} from '../hocs'
+import { flowRight } from 'lodash';
 
-const components = {
-  TableStandart,
-  Card,
+const widgets = {
+  Card: flowRight(widgetPropsHOC)(Card),
+  TableStandart: flowRight(widgetPropsHOC, dataProvide, clickSelect)(TableStandart),
 };
 
-const WidgetsFactory = ({ widgets, pathname, grid }) => (
-  <div style={grid}>
-    {
-      !isEmpty(widgets) && keys(widgets).map(name =>
-        <div key={uniqueId('widget')} style={ get(widgets[name], 'grid', null) }>
-          {
-            createElement(components[widgets[name]['type']], widgets[name])
-          }
-        </div>
-      )
-    }
-  </div>
-);
 
-const mapStateToProps = state => ({
-  widgets: state.widgets,
-  grid: state.grid,
-});
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    initializeWidgets,
-  },
-  dispatch,
-);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(didMountInitWidgets(WidgetsFactory));
+export default widgets;

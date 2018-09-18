@@ -1,5 +1,6 @@
 import * as Antd from 'antd';
-import { keys, difference, omit } from 'lodash';
+import { keys, difference, omit, transform, isEqual, isObject } from 'lodash';
+import queryString from 'query-string';
 
 const clearWidget = (data) => {
   return keys(data).reduce((acc, item) => {
@@ -27,5 +28,41 @@ const schemaAndComponents1 = () => {
     return { rdom, schema: data }
   }
 };
+
+export const compose = (...fns) =>
+  fns.reduce((prevFn, nextFn) =>
+      (...args) => nextFn(prevFn(...args)),
+    value => value
+  );
+
+export function differenceObj(object, base) {
+  function changes(object, base) {
+    return transform(object, function (result, value, key) {
+      if (!isEqual(value, base[key])) {
+        result[key] = (isObject(value) && isObject(base[key])) ? changes(value, base[key]) : value;
+      }
+    });
+  }
+
+  return changes(object, base);
+}
+
+export function urlConverter(template, base, get = null) {
+  for (const key in base) {
+    template = template.replace(`:${key}`, base[key]);
+  }
+  if (get) {
+    const getKey = Object.keys(get).reduce((acc, key) => {
+      if (get[key]) {
+        acc[key] = get[key];
+      }
+      return acc;
+    }, {});
+
+    template = `${template}?${queryString.stringify(getKey)}`;
+  }
+
+  return template;
+}
 
 export const schemaAndComponents = schemaAndComponents1();

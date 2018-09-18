@@ -59,23 +59,11 @@
           "dataIndex": "address",
           "key": "address"
         }],
-      "data": [{
-        "key": "1",
-        "name": "John Brown",
-        "age": 32,
-        "address": "New York No. 1 Lake Park"
-      }, {
-        "key": "2",
-        "name": "Jim Green",
-        "age": 42,
-        "address": "London No. 1 Lake Park"
-      }, {
-        "key": "3",
-        "name": "Joe Black",
-        "age": 32,
-        "address": "Sidney No. 1 Lake Park"
-      }]
-    }]
+      "dataUrl": "tableData2"
+    }],
+    "dependencies": [
+      ["insertAsUrl", "myloveTable.selected", "myloveTable1.dataUrl", "tableData:key"]
+      ]
   },
   "item2": {
     "widgets": [{
@@ -110,7 +98,7 @@
       { "event": "click", "type": "oneSide", "keys": ["myloveTable.data[0]", "alert"] }
     ]
   },
-  "dataTable": [{
+  "tableData": [{
     "key": "1",
     "name": "John Brown",
     "age": 32,
@@ -122,6 +110,68 @@
     "address": "London No. 1 Lake Park"
   }, {
     "key": "3",
+    "name": "Joe Black",
+    "age": 32,
+    "address": "Sidney No. 1 Lake Park"
+  }],
+  "tableData2": [{
+    "key": "1",
+    "name": "John Brown",
+    "age": 32,
+    "address": "New York No. 1 Lake Park"
+  }, {
+    "key": "2",
+    "name": "Jim Green",
+    "age": 42,
+    "address": "London No. 1 Lake Park"
+  }, {
+    "key": "3",
+    "name": "Joe Black",
+    "age": 32,
+    "address": "Sidney No. 1 Lake Park"
+  }, {
+    "key": "4",
+    "name": "Joe Black",
+    "age": 32,
+    "address": "Sidney No. 1 Lake Park"
+  }, {
+    "key": "5",
+    "name": "Joe Black",
+    "age": 32,
+    "address": "Sidney No. 1 Lake Park"
+  }, {
+    "key": "6",
+    "name": "Joe Black",
+    "age": 32,
+    "address": "Sidney No. 1 Lake Park"
+  }],
+  "tableData3": [{
+    "key": "1",
+    "name": "John Brown",
+    "age": 32,
+    "address": "New York No. 1 Lake Park"
+  }, {
+    "key": "2",
+    "name": "Jim Green",
+    "age": 42,
+    "address": "London No. 1 Lake Park"
+  }, {
+    "key": "3",
+    "name": "Joe Black",
+    "age": 32,
+    "address": "Sidney No. 1 Lake Park"
+  }, {
+    "key": "4",
+    "name": "Joe Black",
+    "age": 32,
+    "address": "Sidney No. 1 Lake Park"
+  }, {
+    "key": "5",
+    "name": "Joe Black",
+    "age": 32,
+    "address": "Sidney No. 1 Lake Park"
+  }, {
+    "key": "6",
     "name": "Joe Black",
     "age": 32,
     "address": "Sidney No. 1 Lake Park"
